@@ -1,0 +1,17 @@
+type Category {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  getCategories: [Category]
+    @dbquery(type: "mysql", table: "categories", configuration: "mysql_config")
+  getCategoryByID(id: ID!): Category
+    @dbquery(type: "mysql", table: "categories", configuration: "mysql_config")
+getCategoriesByPostID(id: ID!): [Category]
+    @dbquery(
+      type: "mysql"
+      configuration: "mysql_config"
+      query: "SELECT categories.id, categories.name FROM posts_categories RIGHT JOIN categories ON categoryid = categories.id WHERE postid = ?"
+    )
+}

@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "slugify": "^1.5.3"
+  },
+  "scripts": {
+    "build": "node pullContent.js && hugo",
+    "dev": "node pullContent.js && hugo serve"
+  }
+}

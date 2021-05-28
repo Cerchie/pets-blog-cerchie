@@ -1,1 +1,3 @@
 /stepzen/config.yaml
+# Local Netlify folder
+.netlify

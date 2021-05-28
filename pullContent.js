@@ -15,7 +15,7 @@ const data = JSON.stringify({
     }
   }`,
 });
-
+console.log('DATA HERE', data)
 const markdownFileTemplate = (post, categories) => `
 ---
 title: ${post.title}
@@ -27,7 +27,7 @@ ${post.body}
 `;
 
 const options = {
-  hostname: 'biggs.stepzen.net',
+  hostname: 'mojave.stepzen.net',
   path: '/netlify/pets-blog/__graphql',
   port: 443,
   method: 'POST',
